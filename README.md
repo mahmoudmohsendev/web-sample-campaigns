@@ -17,7 +17,7 @@ Built with Angular standalone components, Apollo GraphQL, and a responsive, acce
 ---
 
 ## Live preview
-[Live link on firebase hosting:](https://campaigns-sample-ca1ec.web.app/)
+[Live preview on firebase hosting](https://campaigns-sample-ca1ec.web.app/)
 
 ---
 
