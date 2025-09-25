@@ -1,0 +1,24 @@
+<nav class="header">
+  <div class="header__left">
+    <img src="Logo.svg" alt="Crowdfund Logo" class="header__left-logo" />
+    <button class="header__burger" (click)="menuOpen = !menuOpen" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <div class="header__nav-links" [class.open]="menuOpen">
+      <a href="#" class="header__left-nav-link">Campaigns</a>
+      <a href="#" class="header__left-nav-link">About</a>
+
+      <div class="header__right-mobile">
+        <a href="#" class="header__right-mobile-login-link">Log in</a>
+        <a href="#" class="header__right-mobile-signup-button">Sign up</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header__right">
+    <a href="#" class="header__right-login-link">Log in</a>
+    <a href="#" class="header__right-signup-button">Sign up</a>
+  </div>
+</nav>

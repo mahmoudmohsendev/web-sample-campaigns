@@ -1,0 +1,37 @@
+<section class="campaigns">
+
+    <div class="campaigns__titles">
+        <p class="campaigns__subtitle">Donations Campaigns</p>
+        <h2 class="campaigns__title">Make a Positive Impact</h2>
+        <p class="campaigns__description">
+            Every penny counts,<br>
+            Donate now and make the world a better place.
+        </p>
+    </div>
+
+  <div class="campaigns__grid">
+    @for (c of campaigns; track $index) {
+    <article
+      class="campaign-card"
+    >
+    <a routerLink="/campaigns/details/{{ c.id }}">
+      <div
+        class="campaign-card__image"
+        [style.backgroundImage]="'url(' + c.imageUrl + ')'"
+      ></div>
+
+      <div class="campaign-card__progress">
+        <div
+          class="campaign-card__progress-bar"
+          [style.width.%]="Math.min((c.currentAmount / c.goal) * 100, 100)"
+        ></div>
+      </div>
+
+      <h3 class="campaign-card__title">{{ c.name }}</h3>
+      <p class="campaign-card__meta">Target: ${{ c.goal }}</p>
+      <p class="campaign-card__meta">Raised: ${{ c.currentAmount }}</p>
+    </a>
+  </article>
+    }
+  </div>
+</section>

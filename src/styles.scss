@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  /* brand colors */
+  --color-primary: #7F56D9;
+  --color-primary-dark: #6d28d9;
+  --progress-color: #80EF76; 
+  --card-bg: #f7f7f7;
+
+  /* neutrals */
+  --color-text: #111827;
+  --color-gray: #535862;
+  --color-gray-500: #717680;
+
+  /* feedback colors */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+}
+
+body,html {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+}

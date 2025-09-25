@@ -1,0 +1,332 @@
+.campaign-details {
+
+  &__breadcrumb {
+    margin-top: 54px;
+    font-weight: 600;
+    color: #797289;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  &__current-breadcrumb {
+    color: var(--color-primary);
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 24px 0 54px 0;
+    text-align: center;
+  }
+
+  &__details-container {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 40px;
+    padding: 80px 96px;
+    background-color: #FAFAFA;
+  }
+
+  &__image-section img {
+    width: 560px;
+    height: 560px;
+    object-fit: cover;
+    background: #f3f3f3;
+  }
+
+  &__info-section {
+    max-width: 560px;
+  }
+
+  &__subtitle {
+    color: #8C8C8C;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  &__heading {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  &__progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #F5F5F5;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  &__progress {
+    height: 100%;
+    background: var(--progress-color);
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  &__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 16px;
+  }
+  &__stat-value {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  &__stat-label {
+    color: #181D27;
+    font-size: 18px;
+  }
+
+ 
+&__champions-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    text-align: center;
+}
+&__donors-list {
+      margin: 64px 112px 64px 112px;
+    display: flex;
+    justify-content: start;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  &__donor-card {
+    border: 1px solid #E9EAEB;
+    border-radius: 16px;
+    padding: 24px;
+    min-width: 120px;
+    position: relative;
+    margin-bottom: 12px;
+    width: 49%;
+  }
+  &__donor-name {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+  &__donor-amount {
+    color: #535862;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  &__new-badge {
+    background: #22c55e;
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+
+  &__donate-now {
+    margin-top: 46px 0;
+    text-align: center;
+    font-size: 36px;
+    padding: 40px 80px;
+  }
+  &__donate-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+  &__donate-form {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  &__donate-name-input {
+    padding: 8px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 280px;
+  }
+  &__donate-price-input {
+    padding: 8px 12px;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 160px;
+  }
+  &__donate-button {
+    background: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    &:hover {
+      background: #4f46e5;
+    }
+  }
+
+  &__partners {
+    margin: 48px 0 0 0;
+    text-align: center;
+    color: #535862;
+    font-size: 15px;
+    background-color: #F2F2F7;
+    padding: 80px 96px;
+  }
+  &__partner-logos {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    margin-top: 32px;
+  }
+  &__partner-logo {
+    height: 48px;
+  }
+
+
+   &__notification {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 16px auto;
+      max-width: 600px;
+      font-size: 15px;
+    }
+    &__notification-message + &__notification-message {
+        margin-top: 4px;
+    }
+
+}
+
+
+/* Responsive adjustments for tablet and mobile */
+@media (max-width: 768px) {
+  .campaign-details {
+    &__details-container {
+      padding: 24px;
+      gap: 24px;
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    &__heading {
+      font-size: 36px;
+    }
+
+    &__image-section img {
+      width: 100%;
+      height: auto;
+    }
+
+    &__info-section {
+      max-width: 100%;
+    }
+
+    /* 📊 stack stats one column */
+    &__stats {
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+      text-align: center;
+    }
+
+    &__donors-list {
+      margin: 24px;
+      gap: 16px;
+    }
+
+    &__donor-card {
+      width: 100%;
+    }
+
+    /* 💳 donation form full width on small screens */
+    &__donate-form {
+      flex-direction: column;
+      align-items: stretch; /* makes children stretch to full width */
+      gap: 12px;
+      width: 100%;
+    }
+
+    &__donate-name-input,
+    &__donate-price-input,
+    &__donate-button {
+      width: 100%; /* full width inputs + button */
+    }
+
+    &__donate-now {
+      padding: 16px 24px;
+      font-size: 28px;
+    }
+
+    &__donate-title {
+      font-size: 28px;
+    }
+
+    &__partners {
+      padding: 24px;
+    }
+
+    &__partner-logos {
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .campaign-details {
+    &__details-container {
+      padding: 12px;
+      gap: 16px;
+    }
+
+    &__heading {
+      font-size: 36px;
+    }
+    
+    &__stats {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    &__donors-list {
+      margin: 12px;
+      gap: 12px;
+    }
+
+    /* 💳 donation form full width on phones */
+    &__donate-form {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+      width: 100%;
+    }
+
+    &__donate-name-input,
+    &__donate-price-input,
+    &__donate-button {
+      width: 100%;
+    }
+
+    &__donate-now {
+      padding: 12px;
+      font-size: 24px;
+    }
+
+    &__donate-title {
+      font-size: 24px;
+    }
+
+    &__partners {
+      padding: 12px;
+    }
+  }
+}

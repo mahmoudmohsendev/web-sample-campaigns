@@ -1,0 +1,75 @@
+<div class="campaign-details">
+  <div *ngIf="errorMessages.length" class="campaign-details__notification">
+    <div *ngFor="let msg of errorMessages" class="campaign-details__notification-message">
+      ⚠️ {{ msg }}
+    </div>
+  </div>
+
+  <div class="campaign-details__breadcrumb" *ngIf="campaign">
+    <a routerLink="/campaigns">Campaigns</a> · <span class="campaign-details__current-breadcrumb">{{ campaign.name }}</span>
+  </div>
+
+  <h1 class="campaign-details__title" *ngIf="campaign">{{ campaign.name }}</h1>
+
+  <div class="campaign-details__details-container" *ngIf="campaign">
+    <div class="campaign-details__image-section">
+      <img [src]="campaign.imageUrl" [alt]="campaign.name" />
+    </div>
+    <div class="campaign-details__info-section">
+      <p class="campaign-details__subtitle">We've helped hundreds of users raise funds</p>
+      <h2 class="campaign-details__heading">{{ campaign.description }}</h2>
+      <div class="campaign-details__progress-bar">
+        <div class="campaign-details__progress" [style.width.%]="percentAchieved"></div>
+      </div>
+      <div class="campaign-details__stats">
+        <div>
+          <div class="campaign-details__stat-value">${{ campaign.goal | number }}</div>
+          <div class="campaign-details__stat-label">Campaign Target</div>
+        </div>
+        <div>
+          <div class="campaign-details__stat-value">{{ percentAchieved }}%</div>
+          <div class="campaign-details__stat-label">Campaign Target Achieved</div>
+        </div>
+        <div>
+          <div class="campaign-details__stat-value">${{ campaign.currentAmount | number }}</div>
+          <div class="campaign-details__stat-label">Raised Funds</div>
+        </div>
+        <div>
+          <div class="campaign-details__stat-value">{{ campaign.donors.length }}+</div>
+          <div class="campaign-details__stat-label">Donors</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="campaign-details__champions" *ngIf="campaign && campaign.donors?.length">
+    <h3 class="campaign-details__champions-title">Champions of the Cause</h3>
+    <div class="campaign-details__donors-list">
+      <div *ngFor="let donor of campaign.donors.slice(0,4); let i = index" class="campaign-details__donor-card">
+        <div class="campaign-details__donor-name">{{ donor.name }}</div>
+        <div class="campaign-details__donor-amount">$ {{ donor.amount }}</div>
+        <span *ngIf="donor.isNew" class="campaign-details__new-badge">New</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="campaign-details__donate-now">
+    <h3 class="campaign-details__donate-title">Donate Now</h3>
+    <form class="campaign-details__donate-form">
+      <input type="number" placeholder="$10.00" min="1" class="campaign-details__donate-price-input" />
+      <input type="text" placeholder="Enter your name" class="campaign-details__donate-name-input" />
+      <button type="submit" class="campaign-details__donate-button">Donate</button>
+    </form>
+  </section>
+
+  <footer class="campaign-details__partners">
+    <div>Our partners help drive the success of your campaigns</div>
+    <div class="campaign-details__partner-logos">
+      <img src="/Company logo.svg" alt="Layers" class="campaign-details__partner-logo" />
+      <img src="/Company logo-1.svg" alt="Sisyphus" class="campaign-details__partner-logo" />
+      <img src="/Company logo-2.svg" alt="Circooles" class="campaign-details__partner-logo" />
+      <img src="/Company logo-3.svg" alt="Catalog" class="campaign-details__partner-logo" />
+      <img src="/Company logo-4.svg" alt="Quotient" class="campaign-details__partner-logo" />
+    </div>
+  </footer>
+</div>
