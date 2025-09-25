@@ -135,6 +135,7 @@
 
     &__right-mobile {
       justify-content: end;
+      display: flex;
 
       &-login-link {
         font-size: 14px;
